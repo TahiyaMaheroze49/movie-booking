@@ -1,0 +1,14 @@
+
+{
+  "name": "cinebook",
+  "version": "1.0.0",
+  "description": "Simple Movie Ticket Booking Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.0.0",
+    "express": "^5.1.0"
+  }
+}

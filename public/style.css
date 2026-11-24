@@ -1,0 +1,314 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+}
+
+header {
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+header h1 {
+  color: #d71920;
+  margin-right: auto;
+}
+
+header h1 span {
+  color: #222;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 17px;
+  font-weight: bold;
+}
+
+.nav-btn {
+  background: white;
+  color: #d71920;
+}
+
+.nav-btn:hover {
+  background: #fff0f0;
+}
+
+main {
+  width: 86%;
+  max-width: 1150px;
+  margin: 30px auto;
+  min-height: 75vh;
+}
+
+.hero {
+  background: #d71920;
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+  border-radius: 12px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  margin: 35px 0 20px;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 24px;
+}
+
+.movie-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 3px 12px #00000010;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h3 {
+  margin-bottom: 8px;
+}
+
+.movie-info p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.movie-info button,
+.book-btn {
+  background: #d71920;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.movie-info button:hover,
+.book-btn:hover {
+  background: #a90e16;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.back-btn {
+  background: #eee;
+  margin-bottom: 20px;
+}
+
+.selected-movie {
+  color: #d71920;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+label {
+  display: block;
+  margin: 20px 0 8px;
+  font-weight: bold;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 12px 0;
+  font-size: 15px;
+  background: white;
+}
+
+.times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 25px;
+}
+
+.times button {
+  background: #fff0f0;
+  color: #d71920;
+}
+
+.times button.active {
+  background: #d71920;
+  color: white;
+}
+
+.screen {
+  background: #eee;
+  text-align: center;
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 450px;
+  border-radius: 50% 50% 5px 5px;
+  color: #555;
+  font-size: 13px;
+}
+
+.seat-list {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 9px;
+  max-width: 450px;
+  margin: 20px auto;
+}
+
+.seat {
+  background: #e4f5e8;
+  color: #22783a;
+  padding: 12px 2px;
+  font-size: 12px;
+}
+
+.seat.selected {
+  background: #d71920;
+  color: white;
+}
+
+.seat.booked {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.ticket {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  border: 2px dashed #d71920;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ticket h2 {
+  color: #d71920;
+  margin-bottom: 15px;
+}
+
+.ticket-details {
+  text-align: left;
+  line-height: 2.1;
+  margin: 20px 0;
+  border-top: 1px dashed #ddd;
+  padding-top: 15px;
+}
+
+.booking-card {
+  padding: 18px;
+  margin: 15px 0;
+  border: 1px solid #eee;
+  border-left: 4px solid #d71920;
+  border-radius: 8px;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #fff0f0;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 15px 4%;
+    gap: 5px;
+  }
+
+  header h1 {
+    font-size: 21px;
+  }
+
+  .nav-btn {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  main {
+    width: 92%;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .movie-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .movie-card img {
+    height: 210px;
+  }
+
+  .seat-list {
+    gap: 5px;
+  }
+
+  .seat {
+    padding: 10px 1px;
+    font-size: 10px;
+  }
+}
+
+#login {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000010;
+  text-align: center;
+}
+
+.login-box h2 {
+  color: #d71920;
+  margin-bottom: 12px;
+}
+
+.login-box p {
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.login-box input {
+  margin: 15px 0;
+}

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineBook - Movie Tickets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎬 Cine<span>Book</span></h1>
+  <button class="nav-btn" onclick="showHome()">Home</button>
+  <button class="nav-btn" onclick="showBookings()">My Bookings</button>
+</header>
+
+<main>
+  <section id="home">
+    <div class="hero">
+      <h2>Book Your Movie Tickets</h2>
+      <p>Your movie experience starts here.</p>
+    </div>
+
+    <h2 class="section-title">Now Showing</h2>
+    <div id="movieList" class="movie-list"></div>
+  </section>
+
+  <section id="booking" class="hidden">
+    <button class="back-btn" onclick="showHome()">← Back to Movies</button>
+    <h2>Book Your Tickets</h2>
+
+    <div id="selectedMovie" class="selected-movie"></div>
+
+    <label>Select Date</label>
+    <input type="date" id="date">
+
+    <label>Select Show Time</label>
+    <div class="times">
+      <button onclick="selectTime('10:00 AM',this)">10:00 AM</button>
+      <button onclick="selectTime('01:00 PM',this)">01:00 PM</button>
+      <button onclick="selectTime('04:00 PM',this)">04:00 PM</button>
+      <button onclick="selectTime('07:00 PM',this)">07:00 PM</button>
+    </div>
+
+    <h3>Select Your Seats</h3>
+    <p class="screen">SCREEN THIS WAY</p>
+    <div id="seatList" class="seat-list"></div>
+
+    <p>Selected Seats: <strong id="seatCount">None</strong></p>
+    <p>Total Amount: <strong id="total">₹0</strong></p>
+
+    <h3>Your Details</h3>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="tel" id="phone" placeholder="10-digit phone number" maxlength="10">
+
+    <h3>Payment Method</h3>
+    <select id="payment">
+      <option value="UPI">UPI</option>
+      <option value="Cash">Cash at Counter</option>
+    </select>
+
+    <button class="book-btn" onclick="bookTicket()">Confirm Booking</button>
+  </section>
+
+  <section id="confirmation" class="hidden">
+    <div class="ticket">
+      <h2>🎉 Booking Confirmed!</h2>
+      <p>Your movie ticket is ready.</p>
+      <div id="ticketDetails"></div>
+      <button class="book-btn" onclick="showBookings()">My Bookings</button>
+      <button class="back-btn" onclick="showHome()">Back to Home</button>
+    </div>
+  </section>
+
+  <section id="myBookings" class="hidden">
+    <h2>My Bookings</h2>
+    <p>Enter your booking phone number.</p>
+    <input type="tel" id="searchPhone" maxlength="10" placeholder="Enter phone number">
+    <button class="book-btn" onclick="loadBookings()">Find Bookings</button>
+    <div id="bookingResults"></div>
+  </section>
+
+<section id="login">
+  <div class="login-box">
+    <h2>Welcome to CineBook 🎬</h2>
+    <p>Login to book your favourite movies</p>
+
+    <input type="text" id="loginName"
+      placeholder="Enter your full name">
+
+    <input type="tel" id="loginPhone"
+      placeholder="Enter 10-digit phone number"
+      maxlength="10">
+
+    <button class="book-btn" onclick="loginUser()">
+      Login / Sign Up
+    </button>
+
+    <p id="loginError" style="color:red;margin-top:12px"></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 CineBook | Your Movie, Your Experience</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
